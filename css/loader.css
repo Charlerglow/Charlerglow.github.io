@@ -1,0 +1,217 @@
+
+:root {
+	--preloader-bg: transparent;
+	--preloader-color: #e6f0ff;
+}
+
+/* Prevent theme default preloader flash: hide preloader by default,
+	 show it only when JS explicitly adds the `show` class. */
+#loading-box {
+	opacity: 0 !important;
+	visibility: hidden !important;
+	pointer-events: none !important;
+}
+
+#loading-box.show {
+	opacity: 1 !important;
+	visibility: visible !important;
+	pointer-events: auto !important;
+}
+
+#loading-box {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #000020;
+	background-image: url('/img/stars.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#loading-box.loaded {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	z-index: -1000;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.spinner-box {
+	width: 300px;
+	height: 300px;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: box;
+	display: flex;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-o-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-o-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	background-color: transparent;
+}
+
+.leo {
+	position: absolute;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: box;
+	display: flex;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-o-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-o-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	border-radius: 50%;
+}
+
+.blue-orbit {
+	width: 165px;
+	height: 165px;
+	border: 1px solid rgba(145, 218, 255, 0.647);
+	-webkit-animation: spin3D 3s linear 0.2s infinite;
+					animation: spin3D 3s linear 0.2s infinite;
+}
+
+.green-orbit {
+	width: 120px;
+	height: 120px;
+	border: 1px solid rgba(145, 255, 191, 0.647);
+	-webkit-animation: spin3D 2s linear 0s infinite;
+					animation: spin3D 2s linear 0s infinite;
+}
+
+.red-orbit {
+	width: 90px;
+	height: 90px;
+	border: 1px solid rgba(255, 202, 145, 0.647);
+	-webkit-animation: spin3D 1s linear 0s infinite;
+					animation: spin3D 1s linear 0s infinite;
+}
+
+.white-orbit {
+	width: 60px;
+	height: 60px;
+	border: 2px solid #fff;
+	-webkit-animation: spin3D 10s linear 0s infinite;
+					animation: spin3D 10s linear 0s infinite;
+}
+
+.w1 {
+	-webkit-transform: rotate3D(1, 1, 1, 90deg);
+		 -moz-transform: rotate3D(1, 1, 1, 90deg);
+			 -o-transform: rotate3D(1, 1, 1, 90deg);
+			-ms-transform: rotate3D(1, 1, 1, 90deg);
+					transform: rotate3D(1, 1, 1, 90deg);
+}
+
+.w2 {
+	-webkit-transform: rotate3D(1, 2, 0.5, 90deg);
+		 -moz-transform: rotate3D(1, 2, 0.5, 90deg);
+			 -o-transform: rotate3D(1, 2, 0.5, 90deg);
+			-ms-transform: rotate3D(1, 2, 0.5, 90deg);
+					transform: rotate3D(1, 2, 0.5, 90deg);
+}
+
+.w3 {
+	-webkit-transform: rotate3D(0.5, 1, 2, 90deg);
+		 -moz-transform: rotate3D(0.5, 1, 2, 90deg);
+			 -o-transform: rotate3D(0.5, 1, 2, 90deg);
+			-ms-transform: rotate3D(0.5, 1, 2, 90deg);
+					transform: rotate3D(0.5, 1, 2, 90deg);
+}
+
+@-moz-keyframes spin3D {
+	from {
+		-webkit-transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+			 -moz-transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+				 -o-transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+				-ms-transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+						transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+	}
+	to {
+		-webkit-transform: rotate3d(0deg);
+			 -moz-transform: rotate3d(0deg);
+				 -o-transform: rotate3d(0deg);
+				-ms-transform: rotate3d(0deg);
+						transform: rotate3d(0deg);
+	}
+}
+
+@-webkit-keyframes spin3D {
+	from {
+		-webkit-transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+			 -moz-transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+				 -o-transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+				-ms-transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+						transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+	}
+	to {
+		-webkit-transform: rotate3d(0deg);
+			 -moz-transform: rotate3d(0deg);
+				 -o-transform: rotate3d(0deg);
+				-ms-transform: rotate3d(0deg);
+						transform: rotate3d(0deg);
+	}
+}
+
+@-o-keyframes spin3D {
+	from {
+		-webkit-transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+			 -moz-transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+				 -o-transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+				-ms-transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+						transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+	}
+	to {
+		-webkit-transform: rotate3d(0deg);
+			 -moz-transform: rotate3d(0deg);
+				 -o-transform: rotate3d(0deg);
+				-ms-transform: rotate3d(0deg);
+						transform: rotate3d(0deg);
+	}
+}
+
+@keyframes spin3D {
+	from {
+		-webkit-transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+			 -moz-transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+				 -o-transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+				-ms-transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+						transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+	}
+	to {
+		-webkit-transform: rotate3d(0deg);
+			 -moz-transform: rotate3d(0deg);
+				 -o-transform: rotate3d(0deg);
+				-ms-transform: rotate3d(0deg);
+						transform: rotate3d(0deg);
+	}
+}
